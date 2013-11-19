@@ -3,6 +3,28 @@ cs360
 
 CS 360 Web Application Lab. License Plates project.
 
+
+Parking Enforcement for HOA/Private Communities
+
+The Problem-
+	In HOA/private communities it is hard to know which vehicles belong to residents and which ones belong to guests.  This makes it hard to know which vehicles are in violation of the communities parking regulations.  Some communities have parking stickers or passes or similar which identify the community of the vehicles in it but don’t provide quick feedback to owners of violations.  This system also doesn’t keep track of a count of violations.
+
+The Solution-
+	A web server that allows the residents to input their vehicle(s) information along with contact information (i.e. email, phone, address).  This allows residents to be informed of violations quicker than receiving a written citation or finding their vehicle towed/booted.  This also allows the community to keep track of vehicles regularly found in violation.  This could also be scalable to larger ‘communities’ (like Provo City with their recent legislation on predatory towing).
+
+Framework-
+	Ruby on Rails (Backend) with Twitter Bootstrap (Front end)
+
+Team-
+	Lawrence Williams
+	Sam Gubler
+
+
+
+
+
+
+
 Features:
 Ideal Feature List:
 
