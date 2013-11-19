@@ -3,6 +3,7 @@ cs360
 
 CS 360 Web Application Lab. License Plates project.
 
+Our application will be available for viewing at www.cheapasfree.com as content is added.  Right now there is a sample app up and running for your viewing pleasure but it is not this application.
 
 Parking Enforcement for HOA/Private Communities
 
