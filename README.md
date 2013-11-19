@@ -14,7 +14,7 @@ The Solution-
 	A web server that allows the residents to input their vehicle(s) information along with contact information (i.e. email, phone, address).  This allows residents to be informed of violations quicker than receiving a written citation or finding their vehicle towed/booted.  This also allows the community to keep track of vehicles regularly found in violation.  This could also be scalable to larger ‘communities’ (like Provo City with their recent legislation on predatory towing).
 
 Framework-
-	Ruby on Rails (Backend) with Twitter Bootstrap (Front end)
+	Ruby on Rails (Backend) with Twitter Bootstrap and JavaScript (Front end)
 
 Team-
 	Lawrence Williams
