@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cs360</title>
+  <title>The Parking App</title>
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/ideas">The Parking App</a>
+      <ul class="nav">
+        <li class="active"><a href="/">Report Violation</a></li>
+        <li class="active"><a href="/">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<footer>
+  <div class="container">
+    Williams Gubler Inc 2013
+  </div>
+</footer>
 
 </body>
 </html>
