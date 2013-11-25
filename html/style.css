@@ -1,0 +1,105 @@
+body
+{
+background-image:url(background.gif);
+color:#333;
+margin:0px;
+}
+img
+{
+border:none;
+}
+header
+{
+margin-left:20px;
+}
+section.container
+{
+-webkit-box-shadow: 0 0 10px #CCC;
+-moz-box-shadow: 0 0 10px #CCC;
+box-shadow: 0 0 10px #CCC;
+background-color:#FFEFFE;
+margin:0 auto;
+width:900px;
+}
+.logo
+{
+display:block;
+float:left;
+}
+.menu
+{
+display:block;
+float:left;
+margin-left: 75px;
+margin-top: 26px;
+}
+.clear_both
+{
+clear:both;
+}
+.menu ul
+{
+display:block;
+float:left;
+list-style-type:none;
+margin:0;
+padding:0;
+}
+.menu li
+{
+display:block;
+float:left;
+padding: 10px;
+border-right:1px solid #bbb;
+}
+.menu a
+{
+text-decoration:none;
+color:#333;
+margin-left:25px;
+margin-right:25px;
+}
+.menu a:hover
+{
+text-decoration:underline;
+}
+.inner_container
+{
+min-height: 600px;
+margin-top:20px;
+}
+.TextBoxField
+{
+width: 150px;
+}
+.DropDownField
+{
+width: 154px;
+}
+footer span
+{
+text-align: center;
+width: 100%;
+float: left;
+margin-bottom:10px;
+margin-top:10px;
+}
+.submit
+{
+cursor:pointer;
+}
+form
+{
+float:left;
+margin:20px;
+}
+.form_title
+{
+width: 314px;
+text-align: center;
+}
+.form_title span
+{
+font-size: 18px;
+font-weight: bold;
+}

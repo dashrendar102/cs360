@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HOA Parking Enforcement</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		
+		<section class = "container">
+			<header>
+				<div class = "logo">
+					<a href = "home.html">
+						<img src = "logo.png" />
+					</a>
+				</div>
+				<div class = "menu">
+					<ul>
+						<li><a href="report_violation.html">Report Violation</a></li>
+						<li><a href="register_vehicle.html">Register Vehicle</a></li>
+						<li style = "border:none;"><a href="view_violations.html">View Violations</a></li>
+					</ul>
+				</div>
+				<div class = "clear_both"></div>
+			</header>
+			<section class = "inner_container">
+				<div class = "form_title"><span>Report a Violation:</span></div>
+				<form>
+				<table>
+					<tbody>
+						<tr>
+							<td style="text-align:left; vertical-align:top;width: 150px;">
+								<label id="LicensePlateNumberLabel" class="FormLabel" for="LicensePlateNumber">License Plate Number:</label>
+							</td>
+							<td>
+								<div class="LicensePlateNumberInput">
+									<input name="LicensePlateNumber" type="text" maxlength="50" id="LicensePlateNumber" class="TextBoxField">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:left; vertical-align:top;width: 150px;">
+								<label id="ViolationTypeLabel" class="FormLabel" for="ViolationTypeDropDownList">Violation:</label>
+							</td>
+							<td>
+								<div class="ViolationType">
+									<select name="ViolationTypeDropDownList" id="ViolationTypeDropDownList" class="DropDownField">
+										<option value="Red Zone">Red Zone</option>
+										<option value="Double Parked">Double Parked</option>
+										<option value="Guest Parked in Resident Spot">Guest Parked in Resident Spot</option>
+										<option value="Resident Parked in Guest Spot">Resident Parked in Guest Spot</option>
+										<option value="Other">Other</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" value="Submit" class = "submit">
+				</form>
+			</section>
+			<footer>
+				<span>HOA Parking Enforcement copyright © 2013. All rights reserved.</span>
+				<div class = "clear_both"></div>
+			</footer>
+		</section>
+	</body>
+</html>

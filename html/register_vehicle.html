@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register Your Vehicle</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		
+		<section class = "container">
+			<header>
+				<div class = "logo">
+					<a href = "home.html">
+						<img src = "logo.png" />
+					</a>
+				</div>
+				<div class = "menu">
+					<ul>
+						<li><a href="report_violation.html">Report Violation</a></li>
+						<li><a href="register_vehicle.html">Register Vehicle</a></li>
+						<li style = "border:none;"><a href="view_violations.html">View Violations</a></li>
+					</ul>
+				</div>
+				<div class = "clear_both"></div>
+			</header>
+			<section class = "inner_container">
+				<div class = "form_title"><span>Register Your Vehicle:</span></div>
+				<form>
+				<table>
+					<tbody>
+						<tr>
+							<td style="text-align:left; vertical-align:top;width: 150px;">
+								<label id="FirstNameLabel" class="FormLabel" for="FirstName">First Name:</label>
+							</td>
+							<td>
+								<div class="FirstNameInput">
+									<input name="FirstName" type="text" maxlength="50" id="FirstName" class="TextBoxField">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:left; vertical-align:top;width: 150px;">
+								<label id="LastNameLabel" class="FormLabel" for="LastName">Last Name:</label>
+							</td>
+							<td>
+								<div class="LastNameInput">
+									<input name="LastName" type="text" maxlength="50" id="LastName" class="TextBoxField">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:left; vertical-align:top;width: 150px;">
+								<label id="LicensePlateNumberLabel" class="FormLabel" for="LicensePlateNumber">License Plate Number:</label>
+							</td>
+							<td>
+								<div class="LicensePlateNumberInput">
+									<input name="LicensePlateNumber" type="text" maxlength="50" id="LicensePlateNumber" class="TextBoxField">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" value="Submit" class = "submit">
+				</form>
+			</section>
+			<footer>
+				<span>HOA Parking Enforcement copyright © 2013. All rights reserved.</span>
+				<div class = "clear_both"></div>
+			</footer>
+		</section>
+	</body>
+</html>
