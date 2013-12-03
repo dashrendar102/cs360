@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203050318) do
+ActiveRecord::Schema.define(version: 20131203051759) do
 
   create_table "plate_accounts", force: true do |t|
     t.string   "state"
     t.string   "plate_num"
     t.string   "email"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "registrations", force: true do |t|
+    t.string   "name"
+    t.string   "plateNum"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "violations", force: true do |t|
+    t.string   "plateNum"
+    t.string   "plateState"
+    t.text     "violationType"
+    t.string   "picture"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
