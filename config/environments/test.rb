@@ -29,7 +29,22 @@ Cs360::Application.configure do
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  #config.action_mailer.delivery_method = :test
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.cheapasfree.com",
+    :port                 => 587,
+    :domain               => "cheapasfree.com",
+    :user_name            => "no-reply@cheapasfree.com",
+    :password             => "h7OHHHSDkhf88w383hF7",
+    :authentication       => "plain",
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => 'none'
+  }
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr

@@ -77,4 +77,19 @@ Cs360::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.cheapasfree.com",
+    :port                 => 587,
+    :domain               => "cheapasfree.com",
+    :user_name            => "no-reply@cheapasfree.com",
+    :password             => "h7OHHHSDkhf88w383hF7",
+    :authentication       => "plain",
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => 'none'
+  }
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
 end

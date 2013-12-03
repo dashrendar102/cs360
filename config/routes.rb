@@ -1,4 +1,6 @@
 Cs360::Application.routes.draw do
+  resources :plate_accounts
+
   get "welcome/index"
   
   # The priority is based upon order of creation: first created -> highest priority.
