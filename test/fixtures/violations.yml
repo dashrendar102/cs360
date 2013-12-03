@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plateNum: MyString
+  plateState: MyString
+  violationType: MyText
+  picture: MyString
+  date: 2013-12-02 22:12:01
+
+two:
+  plateNum: MyString
+  plateState: MyString
+  violationType: MyText
+  picture: MyString
+  date: 2013-12-02 22:12:01

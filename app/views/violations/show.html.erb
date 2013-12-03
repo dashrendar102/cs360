@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Platenum:</strong>
+  <%= @violation.plateNum %>
+</p>
+
+<p>
+  <strong>Platestate:</strong>
+  <%= @violation.plateState %>
+</p>
+
+<p>
+  <strong>Violationtype:</strong>
+  <%= @violation.violationType %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@violation.picture_url, :width => 300) if @violation.picture.present? %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @violation.date.strftime("%d-%m-%Y %I:%M %p") %>
+</p>
+
+<%= link_to 'Edit', edit_violation_path(@violation) %> |
+<%= link_to 'Back', violations_path %>

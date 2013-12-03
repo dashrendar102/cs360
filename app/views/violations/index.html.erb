@@ -1,0 +1,36 @@
+<h1>Listing violations</h1>
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Plate Number</th>
+      <th>Plate State</th>
+      <th>Violation Type</th>
+      <th>Picture</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @violations.reverse.each do |violation| %>
+      <tr>
+        <td align="center"><%= violation.plateNum %></td>
+        <td align="center"><%= violation.plateState %></td>
+        <td><%= violation.violationType %></td>
+        <td><%= image_tag(violation.picture_url, :width => 100) if violation.picture.present? %></td>
+        
+        <td><%= violation.date.strftime("%d-%m-%Y %I:%M %p") %></td>
+        <td><%= link_to 'Show', violation %></td>
+        <td><%= link_to 'Edit', edit_violation_path(violation) %></td>
+        <td><%= link_to 'Destroy', violation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Violation', new_violation_path %>

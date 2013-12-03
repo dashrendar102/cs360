@@ -1,4 +1,10 @@
 Cs360::Application.routes.draw do
+  get "pages/about"
+  get "pages/milestones"
+  resources :registrations
+
+  resources :violations
+
   get "welcome/index"
   
   # The priority is based upon order of creation: first created -> highest priority.

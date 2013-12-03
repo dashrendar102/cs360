@@ -1,0 +1,37 @@
+<%= form_for(@violation) do |f| %>
+  <% if @violation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@violation.errors.count, "error") %> prohibited this violation from being saved:</h2>
+
+      <ul>
+      <% @violation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plateNum, 'Plate Number' %><br>
+    <%= f.text_field :plateNum %>
+  </div>
+  <div class="field">
+    <%= f.label :plateState, 'State' %><br>
+    <%= f.text_field :plateState %>
+  </div>
+  <div class="field">
+    <%= f.label :violationType, 'Violation' %><br>
+    <%= f.text_area :violationType %>
+  </div>
+  <div class="field">
+    <%= f.label :picture, 'Picture' %><br>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :date, 'Date' %><br>
+    <%= f.datetime_select :date, ampm: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
