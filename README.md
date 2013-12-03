@@ -62,3 +62,12 @@ master admin login for:
  email notification to admin
 
  email notification to resident
+
+# Milestones
+
+## Milestone 1
+
+Create scafolding for reporting violations and registering vehicles
+
+Start working on automated mailers. This isn't automated yet but we can send emails from our website
+
