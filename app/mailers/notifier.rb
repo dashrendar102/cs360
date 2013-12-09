@@ -3,7 +3,13 @@ class Notifier < ActionMailer::Base
     return_path: "system@cheapasfree.com"
 
   def welcome(recipient)
-    @plate_accounts = recipient
+    @registration = recipient
     mail(to: recipient.email)
+  end
+  
+  def violation(recipient,violation)
+  	@registration = recipient
+  	@violation = violation
+  	mail(to: recipient.email)
   end
 end

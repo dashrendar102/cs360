@@ -28,6 +28,8 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
+        Notifier.welcome(@registration).deliver
+
         format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
         format.json { render action: 'show', status: :created, location: @registration }
       else
@@ -69,6 +71,6 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:name, :plateNum, :email)
+      params.require(:registration).permit(:name, :plateNum, :email, :state)
     end
 end

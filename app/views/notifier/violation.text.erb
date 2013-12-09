@@ -1,0 +1,14 @@
+Hi <%= @registration.name %>
+A vehicle that you registered to receive notifications for was found in violation.
+
+Date: <%= @violation.date.to_formatted_s(:long_ordinal) %>
+
+License Plate #: <%= @violation.plateNum %>
+State: <%= @violation.plateState %>
+Reason for violation: <%= @violation.violationType %>
+
+<% if !@violation.picture.blank? -%>
+A photo can be found at www.cheapasfree.com/violations/<%= @violation.id %>
+
+<% end -%>
+If you feel this violation was found in error, please contact an HOA board member.
