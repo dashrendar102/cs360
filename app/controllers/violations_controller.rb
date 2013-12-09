@@ -28,6 +28,12 @@ class ViolationsController < ApplicationController
 
     respond_to do |format|
       if @violation.save
+      	registrations = Registration.where(:plateNum => @violation.plateNum, :state => @violation.plateState)
+      	registrations.each do |r|
+      	
+      	  Notifier.violation(r,@violation).deliver
+      	end
+      
         format.html { redirect_to @violation, notice: 'Violation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @violation }
       else

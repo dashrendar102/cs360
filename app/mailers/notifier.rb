@@ -6,4 +6,10 @@ class Notifier < ActionMailer::Base
     @registration = recipient
     mail(to: recipient.email)
   end
+  
+  def violation(recipient,violation)
+  	@registration = recipient
+  	@violation = violation
+  	mail(to: recipient.email)
+  end
 end
