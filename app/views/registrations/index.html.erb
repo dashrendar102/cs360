@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Platenum</th>
+      <th>Plate Number</th>
+      <th>State</th>
       <th>Email</th>
       <th></th>
       <th></th>
@@ -17,7 +18,10 @@
       <tr>
         <td align="center"><%= registration.name %></td>
         <td align="center"><%= registration.plateNum %></td>
-        <td align="center"><%= registration.email %></td>
+        <td align="center"><%= registration.state %></td>
+        <% found = registration.email.index('@') %>
+  		<% front = registration.email[0,found] %>
+        <td align="center"><%= registration.email.gsub(/#{Regexp.escape(front)}@/, '####@') %></td>
         <td><%= link_to 'Show', registration %></td>
         <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
         <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>

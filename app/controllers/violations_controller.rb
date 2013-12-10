@@ -1,5 +1,7 @@
 class ViolationsController < ApplicationController
+  USER, PASSWORD = 'admin', 'password'
   before_action :set_violation, only: [:show, :edit, :update, :destroy]
+  before_action :authentication_check, :only => [:destroy]
 
   # GET /violations
   # GET /violations.json
@@ -71,4 +73,10 @@ class ViolationsController < ApplicationController
     def violation_params
       params.require(:violation).permit(:plateNum, :plateState, :violationType, :picture, :date)
     end
+    
+    def authentication_check
+    authenticate_or_request_with_http_basic do |user, password|
+      user == USER && password == PASSWORD
+    end
+  end
 end
