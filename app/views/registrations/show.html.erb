@@ -6,13 +6,20 @@
 </p>
 
 <p>
-  <strong>Platenum:</strong>
+  <strong>Plate Number:</strong>
   <%= @registration.plateNum %>
 </p>
 
 <p>
+  <strong>State:</strong>
+  <%= @registration.state %>
+</p>
+
+<p>
   <strong>Email:</strong>
-  <%= @registration.email %>
+  <% found = @registration.email.index('@') %>
+  <% front = @registration.email[0,found] %>
+  <%= @registration.email.gsub(/#{Regexp.escape(front)}@/, '####@') %>
 </p>
 
 <%= link_to 'Edit', edit_registration_path(@registration) %> |
