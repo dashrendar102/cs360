@@ -1,7 +1,7 @@
 class ViolationsController < ApplicationController
   USER, PASSWORD = 'admin', 'password'
   before_action :set_violation, only: [:show, :edit, :update, :destroy]
-  before_action :authentication_check, :only => [:destroy]
+  before_action :authentication_check, :only => [:destroy, :edit]
 
   # GET /violations
   # GET /violations.json

@@ -1,7 +1,7 @@
 class RegistrationsController < ApplicationController
   USER, PASSWORD = 'admin', 'password'
   before_action :set_registration, only: [ :edit, :update, :destroy]
-  before_action :authentication_check, :only => [:destroy, :show, :index]
+  before_action :authentication_check, :only => [:destroy, :show, :index ,:edit]
 
   # GET /registrations
   # GET /registrations.json
