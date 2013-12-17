@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
-  before_action :set_registration, only: [:show, :edit, :update, :destroy]
+  USER, PASSWORD = 'admin', 'password'
+  before_action :set_registration, only: [ :edit, :update, :destroy]
+  before_action :authentication_check, :only => [:destroy, :show, :index]
 
   # GET /registrations
   # GET /registrations.json
@@ -73,4 +75,10 @@ class RegistrationsController < ApplicationController
     def registration_params
       params.require(:registration).permit(:name, :plateNum, :email, :state)
     end
+    
+    def authentication_check
+      authenticate_or_request_with_http_basic do |user, password|
+      user == USER && password == PASSWORD
+    end
+  end
 end
