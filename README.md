@@ -71,3 +71,16 @@ Create scafolding for reporting violations and registering vehicles
 
 Start working on automated mailers. This isn't automated yet but we can send emails from our website
 
+## Milestone 2
+
+Mailers are now sent to users when they register a vehicle and when a violation
+
+matching their vehicle's license plate and state is reported. Also implemented
+
+authentication requirement to delete violations. This will be scaled further to
+
+only allow authenticated users view list of register vehicles.
+
+# Report
+
+The report can be found at http://cheapasfree.com/pages/about .
