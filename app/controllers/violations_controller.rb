@@ -36,7 +36,7 @@ class ViolationsController < ApplicationController
       	  Notifier.violation(r,@violation).deliver
       	end
       
-        format.html { redirect_to @violation, notice: 'Violation was successfully created.' }
+        format.html { redirect_to '/violations', notice: 'Violation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @violation }
       else
         format.html { render action: 'new' }

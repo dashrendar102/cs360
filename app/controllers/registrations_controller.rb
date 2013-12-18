@@ -32,7 +32,7 @@ class RegistrationsController < ApplicationController
       if @registration.save
         Notifier.welcome(@registration).deliver
 
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        format.html { redirect_to '/registrations/new' , notice: 'Registration was successfully created.' }
         format.json { render action: 'show', status: :created, location: @registration }
       else
         format.html { render action: 'new' }
