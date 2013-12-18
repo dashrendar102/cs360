@@ -3,38 +3,282 @@
 <head>
   <title>The Parking App</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link rel="icon" href="/uploads/images/favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="/uploads/images/favicon.ico" type="image/x-icon"/>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
+  <style type = "text/css">
+  /*form styles*/
+  #browse-click
+  {
+  width: 130px;
+height: 24px;
+float: left;
+padding: 5px 7px;
+margin: 0 15px 0 0;
+-moz-box-shadow: 0px 0px 5px #999;
+-webkit-box-shadow: 0px 0px 5px #999;
+border: 1px solid #433f3f;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#373636), color-stop(100%,#201c1c));
+background: -moz-linear-gradient(top, #2e2b2b 0%, #1f1e1e 20%);
+cursor: pointer;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+font-family: sans-serif;
+font-size: 11px;
+color: #f2f2f2;
+text-transform: uppercase;
+text-shadow: 0px -1px 0px #433f3f;
+}
+  
+  #violation_violationType, #registration_email, #violation_plateState, #violation_plateNum, #registration_state, #registration_plateNum, #registration_name
+	{
+	width: 360px;
+	border: 0;
+	height: 35px;
+	padding: 5px 10px 0px 10px;
+	margin: 0 0 20px 0;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e2b2b), color-stop(20%,#1f1e1e));
+	background: -moz-linear-gradient(top, #2e2b2b 0%, #1f1e1e 20%);
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0px 1px 0px #f2f2f2;
+	-webkit-box-shadow: 0px 1px 0px #bbbaba;
+	font-family: sans-serif;
+	font-size: 16px;
+	color: #f2f2f2;
+	text-transform: uppercase;
+	text-shadow: 0px -1px 0px #3d3939;
+	outline: none;
+	}
+	#violation_violationType
+  {
+  height:170px
+  }
+  #violation_date_1i, #violation_date_2i, #violation_date_3i, #violation_date_4i, #violation_date_5i
+  {
+  padding: 3px;
+margin: 0;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+background: #2e2b2b;
+color: #ffffff;
+border: none;
+outline: none;
+display: inline-block;
+cursor: pointer;
+}
+.actions input
+{
+width: 185px;
+height: 52px;
+float: right;
+padding: 10px 15px;
+margin: 0 15px 0 0;
+-moz-box-shadow: 0px 0px 5px #999;
+-webkit-box-shadow: 0px 0px 5px #999;
+border: 1px solid #433f3f;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#373636), color-stop(100%,#201c1c));
+background: -moz-linear-gradient(top, #2e2b2b 0%, #1f1e1e 20%);
+cursor: pointer;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+font-family: sans-serif;
+font-size: 16px;
+color: #f2f2f2;
+text-transform: uppercase;
+text-shadow: 0px -1px 0px #433f3f;
+}
+.new_registration .actions input
+{
+width:220px;
+}
+.form_container
+{
+width: 550px;
+margin: 0px auto;
+padding: 30px 30px 80px 30px;
+background: #bbbaba;
+border: 1px solid #d8d7d7;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+}
+.field label
+{
+float: left;
+clear: left;
+margin: 22px 20px 0 0;
+width: 135px;
+text-align: right;
+font-size: 16px;
+color: #302f2f;
+text-transform: uppercase;
+text-shadow: 0px 1px 0px #777171;
+}
+#violation_picture
+{
+display:none;
+}
+  </style>
+  
+  <style type = "text/css">
+	body
+	{
+	background-image:url(/uploads/images/full-road.png);
+	color:#1d1d1d !important;
+	margin:0px;
+	padding:0px;
+	}
+	img
+	{
+	border:none;
+	}
+	.body-inside-container
+	{
+	/*-webkit-box-shadow: 0 0 10px #CCC;
+	-moz-box-shadow: 0 0 10px #CCC;
+	box-shadow: 0 0 10px #CCC;*/
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-image: url(/uploads/images/opacity-background.png);
+	margin:0 auto;
+	width:900px;
+	margin-bottom:40px;
+	}
+	footer, .navbar, .container
+	{
+	padding:20px;
+	}
+	a
+	{
+	text-decoration:none;
+	}
+	a:hover
+	{
+	text-decoration:underline;
+	background-color:none;
+	}
+	pre {
+	background-color: #eee;
+	padding: 10px;
+	font-size: 11px;
+	}
+	.container
+	{
+	color:1d1d1d;
+	}
+	a {
+	color: #666;
+	}
+	a:visited {
+		color: #666;
+	}
+	a:hover {
+		color: #666;
+		background-color: transparent !important;
+	}
+	.nav a{
+	color: #1d1d1d;
+	}
+	.nav a:visited {
+		color: #1d1d1d;
+	}
+	.nav a:hover {
+		color: #1d1d1d;
+		background-color: transparent !important;
+	}
+	.navbar .brand
+	{
+	float:left;
+	width: 360px;
+	}
+	.nav
+	{
+	float:right;
+	-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 0px;
+margin-top:50px;
+	}
+	.nav li
+	{
+	list-style-type:none;
+	float:left;
+	padding-left: 10px;
+	padding-right:10px;
+	font-size:15px;
+	font-weight:bold;
+	border-right:1px solid black;
+	}
+	.nav .first
+	{
+	padding-left:0px;
+	}
+	.nav .last
+	{
+	padding-right:0px;
+	border-right:none;
+	}
+	footer
+	{
+	margin-top:0px;
+	}
+	h1
+	{
+	margin-top:0px;
+	}
+	.footer-navbar-container li
+	{
+	padding:10px;
+	}
+  </style>
 </head>
 <body>
+<div class = "body-inside-container">
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+		<div class="navbar-container">
+		  <a class="brand" href="/">
+			<img src = "/uploads/images/noparking.png" style = "float:left;" />
+			<div>
+				<div style = "color:#1d1d1d;float:left;font-size:24px;font-weight:bold;margin-top:50px;margin-left:15px;">The Parking App</div>
+				<div style = "color:#1d1d1d;float: left;margin-left: 15px;margin-top:10px;font-size: 16px;}">HOA Parking Enforcement</div>
+			</div>
+		  </a>
+		  
+		  <ul class="nav">
+			<li class="active first"><a href="/violations/new">Report a Violation</a></li>
+			<li class="active"><a href="/registrations/new">Register a Vehicle</a></li>
+			<li class="active last"><a href="/violations">View Violations</a></li>
+		  </ul>
+		  <div style = "clear:both;"></div>
+		</div>
+	  </div>
+	</div>
 
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="/">The Parking App</a>
-      <ul class="nav">
-        <li class="active"><a href="/violations">Report Violation</a></li>
-        <li class="active"><a href="/registrations/new">Register Vehicle</a></li>
-      </ul>
-    </div>
-  </div>
+	<div class="container">
+	  <%= yield %>
+	</div>
+
+	<footer>
+	  <div class="footer-container">
+		Williams Gubler Inc. 2013
+	  </div>
+	  <div class="footer-navbar-inner">
+		<div class="footer-navbar-container">
+		  <li class="active"><a href="/pages/about">About</a></li>
+		  <li class="active"><a href="/pages/milestones">Milestones</a></li>
+		</div>
+	  </div>
+	</footer>
 </div>
-
-<div class="container">
-  <%= yield %>
-</div>
-
-<footer>
-  <div class="container">
-    Williams Gubler Inc. 2013
-  </div>
-  <div class="navbar-inner">
-    <div class="container">
-      <li class="active"><a href="/pages/about">About</a></li>
-      <li class="active"><a href="/pages/milestones">Milestones</a></li>
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>

@@ -23,15 +23,17 @@
     <%= f.label :violationType, 'Violation' %><br>
     <%= f.text_area :violationType %>
   </div>
-  <div class="field">
+  <div class="field picture_field" style = "margin-bottom: 25px;">
     <%= f.label :picture, 'Picture' %><br>
     <%= f.file_field :picture %>
+	<input id="browse-click" type="button" class="button" value="Browse for files"/>
+	<p id="file-name" style = "margin: 0px;margin-top: 3px;"></p>
   </div>
   <div class="field">
     <%= f.label :date, 'Date' %><br>
     <%= f.datetime_select :date, ampm: true %>
   </div>
-  <div class="actions">
+  <div class="actions" style = "padding-top: 10px;">
     <%= f.submit %>
   </div>
 <% end %>

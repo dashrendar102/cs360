@@ -1,5 +1,18 @@
+<script type = "text/javascript">
+$(window).load(function () {
+    var intervalFunc = function () {
+        $('#file-name').html($('#violation_picture').val());
+    };
+    $('#browse-click').on('click', function () {
+        $('#violation_picture').click();
+        setInterval(intervalFunc, 1);
+        return false;
+    });
+});
+</script>
+<div class = "form_container">
 <h1>New violation</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', violations_path %>
+</div>
